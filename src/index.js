@@ -94,6 +94,7 @@ class Onboarding extends Component {
           height:
             Dimensions.get('window').height - 2 * this.props.bottomBarHeight,
         }}
+        alwaysBounceVertical={false}
       >
         <Page
           isLight={isLight}
