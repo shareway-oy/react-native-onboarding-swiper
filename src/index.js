@@ -12,6 +12,7 @@ import {
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import tinycolor from 'tinycolor2';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
 import Page from './Page';
 import Pagination from './Pagination';
@@ -88,27 +89,34 @@ class Onboarding extends Component {
     } = this.props;
 
     return (
-      <Page
-        isLight={isLight}
-        image={image}
-        title={title}
-        subtitle={subtitle}
-        width={this.state.width || Dimensions.get('window').width}
-        height={this.state.height || Dimensions.get('window').height}
-        containerStyles={containerStyles}
-        imageContainerStyles={imageContainerStyles}
-        allowFontScaling={allowFontScalingText}
-        titleStyles={Object.assign(
-          {},
-          titleStyles || {},
-          item.titleStyles || {}
-        )}
-        subTitleStyles={Object.assign(
-          {},
-          subTitleStyles || {},
-          item.subTitleStyles || {}
-        )}
-      />
+      <KeyboardAwareScrollView
+        contentContainerStyle={{
+          height:
+            Dimensions.get('window').height - 2 * this.props.bottomBarHeight,
+        }}
+      >
+        <Page
+          isLight={isLight}
+          image={image}
+          title={title}
+          subtitle={subtitle}
+          width={this.state.width || Dimensions.get('window').width}
+          height={this.state.height || Dimensions.get('window').height}
+          containerStyles={containerStyles}
+          imageContainerStyles={imageContainerStyles}
+          allowFontScaling={allowFontScalingText}
+          titleStyles={Object.assign(
+            {},
+            titleStyles || {},
+            item.titleStyles || {}
+          )}
+          subTitleStyles={Object.assign(
+            {},
+            subTitleStyles || {},
+            item.subTitleStyles || {}
+          )}
+        />
+      </KeyboardAwareScrollView>
     );
   };
 

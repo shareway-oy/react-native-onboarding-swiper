@@ -1,5 +1,5 @@
 {
-  "name": "react-native-onboarding-swiper",
+  "name": "@shareway-oy/react-native-onboarding-swiper",
   "version": "1.1.4",
   "description": "Delightful Onboarding for your React-Native App",
   "main": "src/index.js",
@@ -8,7 +8,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jfilter/react-native-onboarding-swiper"
+    "url": "git+https://github.com/shareway-oy/react-native-onboarding-swiper"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
   },
   "keywords": [
     "React",
@@ -30,6 +33,7 @@
   },
   "homepage": "https://github.com/jfilter/react-native-onboarding-swiper#readme",
   "dependencies": {
+    "react-native-keyboard-aware-scroll-view": "https://github.com/APSL/react-native-keyboard-aware-scroll-view#fb40649a9c84aa23d6a55355e9e0e432795967a6",
     "tinycolor2": "^1.4.1"
   },
   "devDependencies": {
